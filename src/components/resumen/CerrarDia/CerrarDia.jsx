@@ -12,6 +12,27 @@ function CerrarDia({
 
   function cerrarDia() {
 
+    const confirmar = window.confirm(
+      "¿Está seguro de cerrar el día?\n\nSe guardará el resumen y se limpiarán los registros actuales."
+    );
+
+    if (!confirmar) {
+      return;
+    }
+
+     if (
+        viajes.length === 0 &&
+        gnc.length === 0 &&
+        nafta.length === 0
+      ) {
+
+        alert(
+          "⚠️ No hay datos para cerrar el día"
+        );
+
+        return;
+      }
+
     const totalIngresos = viajes.reduce(
       (total, viaje) =>
         total + Number(viaje.monto),
@@ -67,19 +88,24 @@ function CerrarDia({
       ) || [];
 
 
+    const nuevoHistorial = [
+      ...historial,
+      resumenDia
+    ];
+
+
     localStorage.setItem(
       "historial",
-      JSON.stringify([
-        ...historial,
-        resumenDia
-      ])
+      JSON.stringify(nuevoHistorial)
     );
-
 
     setViajes([]);
     setGnc([]);
     setNafta([]);
 
+    window.dispatchEvent(
+      new Event("historialActualizado")
+    );
 
     alert("✅ Día cerrado y guardado");
   }

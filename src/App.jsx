@@ -8,6 +8,7 @@ import ListaGNC from "./components/gastos/ListaGNC/ListaGNC.jsx";
 import FormularioNafta from "./components/gastos/FormularioNafta/FormularioNafta.jsx";
 import ListaNafta from "./components/gastos/ListaNafta/ListaNafta.jsx";
 import CerrarDia from "./components/resumen/CerrarDia/CerrarDia.jsx";
+import HistorialDias from "./components/resumen/HistorialDias/HistorialDias.jsx";
 
 function App() {
 
@@ -121,6 +122,8 @@ function App() {
         setGnc={setGnc}
         setNafta={setNafta}
       />
+
+      <HistorialDias/>
 
     </>
   );

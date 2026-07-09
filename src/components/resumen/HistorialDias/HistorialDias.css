@@ -1,0 +1,35 @@
+.historial {
+  margin-top: 20px;
+}
+
+
+.historial table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+.historial th,
+.historial td {
+  padding: 10px;
+  text-align: center;
+}
+
+
+.historial th {
+  background: #eeeeee;
+}
+
+
+.historial tr {
+  border-bottom: 1px solid #ddd;
+}
+
+
+@media (max-width: 700px) {
+
+  .historial {
+    overflow-x: auto;
+  }
+
+}
