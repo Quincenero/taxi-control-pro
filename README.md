@@ -65,7 +65,7 @@ src/
 Clonar el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/Quincenero/taxi-control-pro.git
 ```
 
 Ingresar al proyecto:
