@@ -1,6 +1,10 @@
 import "./Resumen.css";
 
-function Resumen({ ingresos }) {
+function Resumen({ viajes }) {
+  const ingresos = viajes.reduce((total, viaje) => {
+    return total + viaje.monto;
+  }, 0);
+
   return (
     <div className="card resumen">
       <h2>📊 Resumen del Día</h2>
@@ -10,7 +14,7 @@ function Resumen({ ingresos }) {
       <p>⛽ Nafta: $0</p>
       <p>💸 Gastos: $0</p>
       <p>📈 Ganancias: $0</p>
-      <p>🚕 Viajes: 0</p>
+      <p>🚕 Viajes: {viajes.length}</p>
     </div>
   );
 }
