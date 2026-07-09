@@ -1,0 +1,29 @@
+.cerrar-dia {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+
+.boton-cerrar {
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+
+.boton-cerrar:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+
+.boton-cerrar:active {
+  transform: scale(0.98);
+}

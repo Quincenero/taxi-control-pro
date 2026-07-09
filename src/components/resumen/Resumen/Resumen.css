@@ -1,8 +1,81 @@
-.resumen {
-  padding: 20px;
+.resumen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
   margin-top: 20px;
 }
 
-.resumen p {
+
+.dato {
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+
+.dato span {
+  display: block;
+  font-size: 1rem;
+}
+
+
+.dato strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+
+.ingreso {
+  background: #e3f2fd;
+}
+
+
+.gasto {
+  background: #ffebee;
+}
+
+
+.ganancia {
+  background: #e8f5e9;
+}
+
+
+.detalle {
+  margin-top: 20px;
+}
+
+
+.detalle p {
   margin: 8px 0;
+}
+
+.viajes {
+  background: #fff3e0;
+}
+
+
+.gnc {
+  background: #e8f5e9;
+}
+
+
+.nafta {
+  background: #fff8e1;
+}
+
+
+.promedio {
+  background: #ede7f6;
+}
+
+
+/* Adaptación celular */
+
+@media (max-width: 700px) {
+
+  .resumen-grid {
+    grid-template-columns: 1fr;
+  }
+
 }

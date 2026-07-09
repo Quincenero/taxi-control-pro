@@ -5,6 +5,9 @@ import Resumen from "./components/resumen/Resumen/Resumen.jsx";
 import ListaViajes from "./components/viajes/ListaViajes/ListaViajes.jsx";
 import FormularioGNC from "./components/gastos/FormularioGNC/FormularioGNC.jsx";
 import ListaGNC from "./components/gastos/ListaGNC/ListaGNC.jsx";
+import FormularioNafta from "./components/gastos/FormularioNafta/FormularioNafta.jsx";
+import ListaNafta from "./components/gastos/ListaNafta/ListaNafta.jsx";
+import CerrarDia from "./components/resumen/CerrarDia/CerrarDia.jsx";
 
 function App() {
 
@@ -25,6 +28,14 @@ function App() {
     
   });
 
+  const [nafta, setNafta] = useState(() => {
+    const naftaGuardada = localStorage.getItem("nafta");
+
+    return naftaGuardada
+      ? JSON.parse(naftaGuardada)
+      : [];
+  });
+
   useEffect(() => {
     localStorage.setItem(
       "viajes",
@@ -39,6 +50,13 @@ function App() {
     );
   }, [gnc]);
 
+  useEffect(() => {
+    localStorage.setItem(
+      "nafta",
+      JSON.stringify(nafta)
+    );
+  }, [nafta]);
+
   function eliminarViaje(id) {
     setViajes((viajesAnteriores) =>
      viajesAnteriores.filter((viaje) => viaje.id !== id)
@@ -50,6 +68,14 @@ function App() {
       cargasAnteriores.filter((carga) => carga.id !==id)
     );
   }
+
+  function eliminarNafta(id) {
+    setNafta((cargasAnteriores) =>
+      cargasAnteriores.filter(
+        (carga) => carga.id !== id
+      )
+    );
+  }  
 
   return (
     <>
@@ -63,6 +89,10 @@ function App() {
         setGnc={setGnc}
       />
 
+      <FormularioNafta
+        setNafta={setNafta}
+      />
+
       <ListaViajes viajes={viajes} 
                   eliminarViaje={eliminarViaje}
       />
@@ -72,11 +102,26 @@ function App() {
         eliminarGNC={eliminarGNC}
       />
 
+      <ListaNafta
+        nafta={nafta}
+        eliminarNafta={eliminarNafta}
+      />
+
       <Resumen
         viajes={viajes}
         gnc={gnc}
-        
+        nafta={nafta}
       />
+
+      <CerrarDia
+        viajes={viajes}
+        gnc={gnc}
+        nafta={nafta}
+        setViajes={setViajes}
+        setGnc={setGnc}
+        setNafta={setNafta}
+      />
+
     </>
   );
 }

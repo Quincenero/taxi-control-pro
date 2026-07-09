@@ -1,15 +1,14 @@
-import "./ListaGNC.css";
+import "./ListaNafta.css";
 
-function ListaGNC({ gnc, eliminarGNC }) {
+function ListaNafta({ nafta, eliminarNafta }) {
 
-  console.log("Datos GNC: ", gnc);
-  console.log("Carga GNC:", gnc);
+  console.log("Datos Nafta:", nafta);
 
   return (
     <div className="card">
-      <h2>🟢 Historial GNC</h2>
+      <h2>⛽ Historial Nafta</h2>
 
-      {gnc.length === 0 ? (
+      {nafta.length === 0 ? (
         <p>No hay cargas registradas.</p>
       ) : (
         <table>
@@ -23,15 +22,19 @@ function ListaGNC({ gnc, eliminarGNC }) {
           </thead>
 
           <tbody>
-            {gnc.map((carga) => (
+            {nafta.map((carga) => (
               <tr key={carga.id}>
                 <td>{carga.fecha}</td>
                 <td>{carga.hora}</td>
-                <td>${carga.monto.toLocaleString("es-AR")}</td>
                 <td>
-                    <button onClick={() => eliminarGNC(carga.id)}>
-                        🗑️
-                    </button>
+                  ${carga.monto.toLocaleString("es-AR")}
+                </td>
+                <td>
+                  <button
+                    onClick={() => eliminarNafta(carga.id)}
+                  >
+                    🗑️
+                  </button>
                 </td>
               </tr>
             ))}
@@ -44,4 +47,4 @@ function ListaGNC({ gnc, eliminarGNC }) {
   );
 }
 
-export default ListaGNC;
+export default ListaNafta;

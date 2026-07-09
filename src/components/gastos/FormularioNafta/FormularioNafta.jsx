@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-function FormularioGNC({ setGnc }) {
+function FormularioNafta({ setNafta }) {
 
   const [monto, setMonto] = useState("");
 
-  function agregarGNC() {
+  function agregarNafta() {
 
     if (monto.trim() === "") {
       alert("Ingrese un monto.");
@@ -29,9 +29,8 @@ function FormularioGNC({ setGnc }) {
       monto: importe,
     };
 
-
-    setGnc((gncAnterior) => [
-      ...gncAnterior,
+    setNafta((naftaAnterior) => [
+      ...naftaAnterior,
       nuevaCarga,
     ]);
 
@@ -42,21 +41,21 @@ function FormularioGNC({ setGnc }) {
   return (
     <div className="card">
 
-      <h2>🟢 Carga GNC</h2>
+      <h2>⛽ Carga Nafta</h2>
 
       <input
         type="number"
         value={monto}
         onChange={(e) => setMonto(e.target.value)}
-        placeholder="Monto GNC"
+        placeholder="Monto Nafta"
       />
 
-      <button onClick={agregarGNC}>
-        Agregar GNC
+      <button onClick={agregarNafta}>
+        Agregar Nafta
       </button>
 
     </div>
   );
 }
 
-export default FormularioGNC;
+export default FormularioNafta;
