@@ -1,16 +1,165 @@
-# React + Vite
+# 🚕 Taxi Control Pro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación desarrollada con React para gestionar la actividad diaria de un taxista.
 
-Currently, two official plugins are available:
+El objetivo del proyecto es registrar ingresos, gastos y generar reportes diarios, mensuales y anuales, ofreciendo una herramienta simple, rápida y fácil de usar tanto en computadora como en dispositivos móviles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Características
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Registro de viajes.
+* Registro de gastos.
+* Resumen diario.
+* Resumen mensual.
+* Resumen anual.
+* Estadísticas de ingresos y gastos.
+* Historial de movimientos.
+* Almacenamiento local durante el desarrollo.
+* Futuro soporte para autenticación de usuarios.
+* Integración futura con MongoDB.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologías
+
+### Frontend
+
+* React
+* Vite
+* JavaScript (ES6+)
+* CSS
+
+### Backend (Próximamente)
+
+* Node.js
+* Express
+
+### Base de datos (Próximamente)
+
+* MongoDB
+
+---
+
+## 📁 Estructura del proyecto
+
+```text
+src/
+│
+├── assets/
+├── components/
+├── constants/
+├── context/
+├── hooks/
+├── pages/
+├── services/
+├── utils/
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🚀 Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
+
+Ingresar al proyecto:
+
+```bash
+cd taxi-control-pro
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Iniciar el proyecto:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🗺️ Roadmap
+
+### Sprint 1
+
+* [x] Configuración inicial
+* [x] Estructura del proyecto
+* [ ] Dashboard
+
+### Sprint 2
+
+* [ ] Registro de viajes
+
+### Sprint 3
+
+* [ ] Registro de gastos
+
+### Sprint 4
+
+* [ ] Resumen diario
+
+### Sprint 5
+
+* [ ] Resumen mensual
+
+### Sprint 6
+
+* [ ] Resumen anual
+
+### Sprint 7
+
+* [ ] Estadísticas
+
+### Sprint 8
+
+* [ ] Exportación de datos
+
+### Sprint 9
+
+* [ ] Backend con Express
+
+### Sprint 10
+
+* [ ] Login y registro de usuarios
+
+### Sprint 11
+
+* [ ] Integración con MongoDB
+
+### Sprint 12
+
+* [ ] Publicación de la aplicación
+
+---
+
+## 🎯 Objetivos del proyecto
+
+* Construir una aplicación completa utilizando React.
+* Aplicar buenas prácticas de desarrollo.
+* Mantener una arquitectura escalable.
+* Aprender el flujo completo de desarrollo Full Stack.
+* Crear una herramienta útil para el trabajo diario de un taxista.
+
+---
+
+## 📅 Estado del proyecto
+
+🚧 En desarrollo.
+
+---
+
+## 👨‍💻 Autor
+
+**Marco Espinoza**
+
+Proyecto desarrollado como parte de un proceso de aprendizaje de desarrollo web, con foco en React, Node.js y MongoDB.
