@@ -43,9 +43,11 @@ function HistorialDias() {
     }, []);
 
     function eliminarDia(id) {
-        const nuevoHistorial =
-            historial.filter(
-            (dia) => dia.id !== id
+
+      
+      const nuevoHistorial =
+        historial.filter(
+          (dia) => dia.id !== id
         );
         setHistorial(nuevoHistorial);
 
@@ -54,12 +56,81 @@ function HistorialDias() {
             JSON.stringify(nuevoHistorial)
         );
     }
+    const diasTrabajados = historial.length;
+
+      const ingresosTotales = historial.reduce(
+        (total, dia) => total + dia.ingresos,
+        0
+      );
+
+      const gastosTotales = historial.reduce(
+        (total, dia) => total + dia.gastos,
+        0
+      );
+
+      const gananciaTotal = historial.reduce(
+        (total, dia) => total + dia.ganancia,
+        0
+      );
+
+      const viajesTotales  = historial.reduce(
+
+        (total, dia) => total + dia.viajes,
+        0
+      );
+
+      const promedioGanancia =
+        diasTrabajados > 0
+          ? gananciaTotal / diasTrabajados
+          : 0;
+
 
   return (
     <div className="card historial">
 
       <h2>📅 Historial de días</h2>
 
+      <div className="estadisticas-historial">
+
+        <div className="estadistica">
+          <span>📅 Días</span>
+          <strong>{diasTrabajados}</strong>
+        </div>
+
+        <div className="estadistica">
+          <span>🚕 Viajes</span>
+          <strong>{viajesTotales}</strong>
+        </div>
+
+        <div className="estadistica">
+          <span>💰 Ingresos</span>
+          <strong>
+            ${ingresosTotales.toLocaleString("es-AR")}
+          </strong>
+        </div>
+
+        <div className="estadistica">
+          <span>💸 Gastos</span>
+          <strong>
+            ${gastosTotales.toLocaleString("es-AR")}
+          </strong>
+        </div>
+
+        <div className="estadistica">
+          <span>📈 Ganancia</span>
+          <strong>
+            ${gananciaTotal.toLocaleString("es-AR")}
+          </strong>
+        </div>
+
+        <div className="estadistica">
+          <span>📊 Promedio</span>
+          <strong>
+            ${Math.round(promedioGanancia).toLocaleString("es-AR")}
+          </strong>
+        </div>
+
+      </div>
 
       {historial.length === 0 ? (
 

@@ -25,11 +25,41 @@
   border-bottom: 1px solid #ddd;
 }
 
+.estadisticas-historial {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.estadistica {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.estadistica span {
+    display: block;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.estadistica strong {
+    font-size: 1.4rem;
+    color: #1f5e7e;
+}
 
 @media (max-width: 700px) {
 
   .historial {
     overflow-x: auto;
   }
+
+  .estadisticas-historial{
+        grid-template-columns:1fr;
+    }
+
 
 }
