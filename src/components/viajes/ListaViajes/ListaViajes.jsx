@@ -18,38 +18,38 @@ function ListaViajes({ viajes, eliminarViaje }) {
       {viajes.length === 0 ? (
         <p>No hay viajes registrados.</p>
       ) : 
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Fecha</th>
-                    <th>Hora</th>
-                    <th>Forma de Pago</th>
-                    <th>Monto</th>
-                    <th>Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-                {viajes.map((viaje) => (
-                    <tr key={viaje.id}>
-                        <td>{viaje.fecha}</td>
-                        <td>{viaje.hora}</td>
-                        <td>{viaje.formaPago}</td>
-                        <td>{formatoDinero(viaje.monto)}</td>
-                        <td>
-                            <button onClick={() => {
-                            console.log("Eliminar:", viaje.id);
-                            eliminarViaje(viaje.id);
-                            }}>
-                            🗑️
-                            </button>
-                        </td>
+        <div className="tabla-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Forma de Pago</th>
+                        <th>Monto</th>
+                        <th>Acción</th>
                     </tr>
-                ))}
-            </tbody>
-            
-        </table>
-
+                </thead>
+                <tbody>
+                    {viajes.map((viaje) => (
+                        <tr key={viaje.id}>
+                            <td>{viaje.fecha}</td>
+                            <td>{viaje.hora}</td>
+                            <td>{viaje.formaPago}</td>
+                            <td>{formatoDinero(viaje.monto)}</td>
+                            <td>
+                                <button onClick={() => {
+                                console.log("Eliminar:", viaje.id);
+                                eliminarViaje(viaje.id);
+                                }}>
+                                🗑️
+                                </button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+                
+            </table>
+        </div>
     }      
    </div>
 );

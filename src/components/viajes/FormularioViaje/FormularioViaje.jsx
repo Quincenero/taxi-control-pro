@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function FormularioViaje({ setViajes }) {
   const [monto, setMonto] = useState("");
   const [formaPago, setFormaPago] = useState("Efectivo");
+  const montoInput = useRef(null);
 
   function agregarViaje() {
     if (monto.trim() === "") {
@@ -39,13 +40,21 @@ function FormularioViaje({ setViajes }) {
     ]);
     setMonto("");
     setFormaPago("Efectivo");
+    montoInput.current.focus();
   }
 
   return (
-    <div className="card">
+    <form 
+      className="card"
+      onSubmit={(e) => {
+        e.preventDefault();
+        agregarViaje();
+      }}
+    >
       <h2>🚕 Nuevo Viaje</h2>
 
       <input
+        ref={montoInput}
         type="number"
         value={monto}
         onChange={(e) => setMonto(e.target.value)}
@@ -62,10 +71,10 @@ function FormularioViaje({ setViajes }) {
         <option value="Otro">Otro</option>
       </select>
 
-      <button onClick={agregarViaje}>
-        Agregar viaje
+      <button type="submit">
+        ➕ Agregar viaje
       </button>
-    </div>
+    </form>
   );
 }
 

@@ -79,40 +79,31 @@ function App() {
   }  
 
   return (
-    <>
+    <div className="app-container">
+
       <Header />
-
-      <FormularioViaje
-        setViajes={setViajes}
-      />
-
-      <FormularioGNC 
-        setGnc={setGnc}
-      />
-
-      <FormularioNafta
-        setNafta={setNafta}
-      />
-
-      <ListaViajes viajes={viajes} 
-                  eliminarViaje={eliminarViaje}
-      />
-
-      <ListaGNC
-        gnc={gnc}
-        eliminarGNC={eliminarGNC}
-      />
-
-      <ListaNafta
-        nafta={nafta}
-        eliminarNafta={eliminarNafta}
-      />
 
       <Resumen
         viajes={viajes}
         gnc={gnc}
         nafta={nafta}
       />
+
+
+      <FormularioViaje
+        setViajes={setViajes}
+      />
+
+
+      <FormularioGNC
+        setGnc={setGnc}
+      />
+
+
+      <FormularioNafta
+        setNafta={setNafta}
+      />
+
 
       <CerrarDia
         viajes={viajes}
@@ -123,9 +114,28 @@ function App() {
         setNafta={setNafta}
       />
 
-      <HistorialDias/>
 
-    </>
+      <ListaViajes
+        viajes={viajes}
+        eliminarViaje={eliminarViaje}
+      />
+
+
+      <ListaGNC
+        gnc={gnc}
+        eliminarGNC={eliminarGNC}
+      />
+
+
+      <ListaNafta
+        nafta={nafta}
+        eliminarNafta={eliminarNafta}
+      />
+
+
+      <HistorialDias />
+
+    </div>
   );
 }
 

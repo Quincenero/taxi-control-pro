@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function FormularioGNC({ setGnc }) {
 
   const [monto, setMonto] = useState("");
+  const montoInput = useRef(null);
 
   function agregarGNC() {
 
@@ -36,26 +37,34 @@ function FormularioGNC({ setGnc }) {
     ]);
 
     setMonto("");
+    montoInput.current.focus();
   }
 
 
   return (
-    <div className="card">
+    <form 
+      className="card"
+      onSubmit={(e) => {
+        e.preventDefault();
+        agregarGNC();
+      }}
+    >
 
       <h2>🟢 Carga GNC</h2>
 
       <input
+      ref={montoInput}
         type="number"
         value={monto}
         onChange={(e) => setMonto(e.target.value)}
         placeholder="Monto GNC"
       />
 
-      <button onClick={agregarGNC}>
-        Agregar GNC
+      <button type="submit">
+        ➕ Agregar GNC
       </button>
 
-    </div>
+    </form>
   );
 }
 

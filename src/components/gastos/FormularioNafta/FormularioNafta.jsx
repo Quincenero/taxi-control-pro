@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function FormularioNafta({ setNafta }) {
 
   const [monto, setMonto] = useState("");
+  const montoInput = useRef(null)
 
   function agregarNafta() {
 
@@ -35,26 +36,33 @@ function FormularioNafta({ setNafta }) {
     ]);
 
     setMonto("");
+    montoInput.current.focus();
   }
 
 
   return (
-    <div className="card">
+    <form className="card"
+      onSubmit={(e) => {
+        e.preventDefault();
+        agregarNafta;
+      }}
+    >
 
       <h2>⛽ Carga Nafta</h2>
 
       <input
+        ref={montoInput}
         type="number"
         value={monto}
         onChange={(e) => setMonto(e.target.value)}
         placeholder="Monto Nafta"
       />
 
-      <button onClick={agregarNafta}>
-        Agregar Nafta
+      <button type="submit">
+        ➕ Agregar Nafta
       </button>
 
-    </div>
+    </form>
   );
 }
 

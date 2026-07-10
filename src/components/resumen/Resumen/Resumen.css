@@ -1,3 +1,7 @@
+.resumen {
+  margin-bottom: 20px;
+}
+
 .resumen-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -7,9 +11,10 @@
 
 
 .dato {
-  padding: 20px;
-  border-radius: 12px;
+  padding: 22px 15px;
+  border-radius: 14px;
   text-align: center;
+  min-height: 90px;
 }
 
 
@@ -40,14 +45,8 @@
   background: #e8f5e9;
 }
 
-
-.detalle {
-  margin-top: 20px;
-}
-
-
-.detalle p {
-  margin: 8px 0;
+.ganancia strong {
+  font-size: 1.8rem;
 }
 
 .viajes {
@@ -76,6 +75,10 @@
 
   .resumen-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
+  .dato strong {
+    font-size: 1.4rem;
+  }
 }
